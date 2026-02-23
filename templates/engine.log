@@ -1,2 +1,0 @@
-INFO:tradekit.backtest_engine.engine: Using signals-method for vectorized computation
-INFO:tradekit.backtest_engine.engine: Saving output to file ./ma_engine_trades.jsonl
