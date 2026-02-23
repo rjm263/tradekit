@@ -9,7 +9,8 @@ Tradekit
 This package provides a leightweight, modular toolkit for live testing and evaluating algorithmic trading strategies.
 It supports running multiple trade engines on a server and can notify the user about engine progress. By default, after an engine finished running, it creates a dashboard of relevant performance metrics.
 
-The repository is available on `Github <https://github.com/rjm263/tradekit>`_. The package is available on `PyPI <https://test.pypi.org/project/tradekit/>`_ and can be installed via 
+The repository is available on `Github <https://github.com/rjm263/tradekit>`_. 
+The package is available on `PyPI <https://test.pypi.org/project/tradekit>`_ and can be installed via 
 
 ``pip install tradekit``
 
