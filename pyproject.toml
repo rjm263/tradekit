@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "tradekit"
 version = "0.1.0"
 license = "MIT"
-description = "A modular, light weight engine for live trading and backtesting"
+description = "A lightweight, modular toolkit for live testing and evaluating algorithmic trading strategies"
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [{ name = "rjm263" }]
@@ -21,7 +21,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/rjm263/tradekit"
-Documentation = "https://github.com/rjm263/tradekit"
+Documentation = "https://rjm263.github.io/tradekit/"
 Source = "https://github.com/rjm263/tradekit"
 
 [tool.setuptools]
