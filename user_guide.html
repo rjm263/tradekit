@@ -1,0 +1,878 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Templates" href="templates.html"><link rel="prev" title="Tradekit" href="index.html">
+        <link rel="prefetch" href="_static/tradekit_logo.png" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>User Guide - tradekit 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">tradekit 0.1.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/tradekit_logo.png" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="templates.html">Templates</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tradekit.html">Documentation</a><input aria-label="Toggle navigation of Documentation" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tradekit.backtest_engine.html">backtest_engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tradekit.data.html">data</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tradekit.exec_rules.html">exec_rules</a><input aria-label="Toggle navigation of exec_rules" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="tradekit.exec_rules.date_rules.html">date_rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tradekit.exec_rules.event_rules.html">event_rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tradekit.exec_rules.profit.html">profit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tradekit.exec_rules.stop.html">stop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tradekit.exec_rules.volume_rules.html">volume_rules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tradekit.fees.html">fees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tradekit.forward_engine.html">forward_engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tradekit.metrics.html">metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tradekit.notifiers.html">notifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tradekit.strategies.html">strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tradekit.supervisor.html">supervisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tradekit.utils.html">utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tradekit.visuals.html">visuals</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/user_guide.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="user-guide">
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Link to this heading">¶</a></h1>
+<p>The main philosophy of this package is a separation of signal emission, trade execution and evaluation. While execution and evaluation are handled entirely by the package, for signal emission the user has to input their own code. As such, the package itself does not contain any pre-made strategies, nor does it contain any rules for trading or fee models to be used for evaluation (however, some templates are provided at <a class="reference external" href="templates.html">Templates</a>).</p>
+<p>The idea is for the user to add their custom strategies etc. to dedicated package registries, which are accessed by two kinds of engine:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="tradekit.forward_engine.html">ForwardEngine</a> for live trading and</p></li>
+<li><p><a class="reference external" href="tradekit.backtest_engine.html">BacktestEngine</a> for backtesting strategies</p></li>
+</ul>
+<p>Once added to the registry, a strategy can be tested by configuring and running the respective engine, either locally or on an external server. For the latter, the package provides the <a class="reference external" href="tradekit.supervisor.html">Supervisor</a> class.</p>
+<p>The full workflow of coding a strategy, testing it with an engine, running the engine on a server, and evaluating the strategy is explained below. For the sample code, we assume the following file structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project/
+├── my_strategies/
+│   ├── __init__.py
+│   └── ma_crossover.py
+├── my_profit_rules/
+│   └── __init__.py
+│   └── static.py
+├── my_stop_rules/
+│   └── __init__.py
+│   └── dynamic.py
+├── my_event_rules/
+│   └── __init__.py
+│   └── earnings.py
+├── ma_config.json
+├── ma_engine.py
+└── ma_supervisor.py
+</pre></div>
+</div>
+<section id="step-1-creating-strategies">
+<h2>Step 1: Creating Strategies<a class="headerlink" href="#step-1-creating-strategies" title="Link to this heading">¶</a></h2>
+<p>In this section, the term <em>strategy</em> collectively means</p>
+<ul class="simple">
+<li><p>a rule for emission of buy/sell signals based on some technicals (support for fundamentals will be added soon)</p></li>
+<li><p>a rule for take-profit exits</p></li>
+<li><p>a rule for stop-loss exits</p></li>
+</ul>
+<p>as well as an optional set of additional rules about closing trades</p>
+<ul class="simple">
+<li><p>on specific days or times during the day</p></li>
+<li><p>on days on which macro events happen</p></li>
+<li><p>when assets are traded at specified volumes</p></li>
+</ul>
+<p>For each item above there exists a base class in the package and a dedicated registry. Any custom implementations <strong>must</strong> be subclasses of the former (and as such contain certain essential methods) and added to the latter.</p>
+<section id="strategy">
+<h3>Strategy<a class="headerlink" href="#strategy" title="Link to this heading">¶</a></h3>
+<p>The base class for the main part of the strategy—signal emission—is the <a class="reference external" href="tradekit.strategies.html">Strategy</a> class. It is imported via</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.strategies.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Strategy</span>
+</pre></div>
+</div>
+<p>For custom signal emission, the user must code their strategy into a subclass thereof. In particular, they need to provide the following methods:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Strategy.on_bar(ts,</span> <span class="pre">bar,</span> <span class="pre">history)</span></code></p>
+<blockquote>
+<div><p>This method checks for every bar (containing price data and volumes) whether a signal is emitted according to the user’s strategy or not. The <code class="docutils literal notranslate"><span class="pre">history</span></code> argument provides historic data used to compute the technicals on which the strategy is based.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Strategy.signals(df)</span></code>, optional</p>
+<blockquote>
+<div><p>This method is optional but highly recommended to implement. Its purpose is to vectorise signal emission for backtesting: given historical data <code class="docutils literal notranslate"><span class="pre">df</span></code>, it should create a list of signals.
+If this method is not provided, the signals for backtesting will be obtained by checking every single for signal emission via <code class="docutils literal notranslate"><span class="pre">on_bar</span></code> (which significantly increases the runtime).</p>
+</div></blockquote>
+</li>
+</ul>
+<p>A custom <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> class, named <code class="docutils literal notranslate"><span class="pre">TestClass</span></code> and provided in ‘test/class/location/test_class.py’, is added to the registry by appending the command</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_strategy</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">test_class</span><span class="p">,</span> <span class="n">TestClass</span><span class="p">)</span><span class="err">``</span>
+</pre></div>
+</div>
+<p>to the test_class.py file.</p>
+<p>Note that all subsequent items listed (profit, stop etc.) must be included as arguments in the custom <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> class (in the form of dicts containing the kwargs to initialise a respective object).</p>
+<p>Here is a sample implementation <a class="reference external" href="../../../templates/my_strategies/ma_crossover.py">ma_crossover</a> for a moving average crossover strategy (note that this code is <em>very</em> basic and takes rather long since it uses <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for computing MAs; for faster code use numpy):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.strategies.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Strategy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.strategies.factory</span><span class="w"> </span><span class="kn">import</span> <span class="n">add_strategy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.exec_rules.date_rules.factory</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_datetime_rule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.exec_rules.event_rules.factory</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_event_rule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.exec_rules.volume_rules.factory</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_volume_rule</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MACrossover</span><span class="p">(</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">symbols</span><span class="p">,</span>
+            <span class="n">capital</span><span class="p">,</span>
+            <span class="n">interval</span><span class="p">,</span>
+            <span class="n">stop_rule</span><span class="p">,</span>
+            <span class="n">profit_rule</span><span class="p">,</span>
+            <span class="n">date_rules</span><span class="p">,</span>
+            <span class="n">event_rules</span><span class="p">,</span>
+            <span class="n">vol_rules</span><span class="p">,</span>
+            <span class="n">timeout</span><span class="p">,</span>
+            <span class="n">fast</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+            <span class="n">slow</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">symbols</span><span class="o">=</span><span class="n">symbols</span><span class="p">,</span>
+            <span class="n">capital</span><span class="o">=</span><span class="n">capital</span><span class="p">,</span>
+            <span class="n">interval</span><span class="o">=</span><span class="n">interval</span><span class="p">,</span>
+            <span class="n">stop_rule</span><span class="o">=</span><span class="n">stop_rule</span><span class="p">,</span>
+            <span class="n">profit_rule</span><span class="o">=</span><span class="n">profit_rule</span><span class="p">,</span>
+            <span class="n">date_rules</span><span class="o">=</span><span class="n">date_rules</span><span class="p">,</span>
+            <span class="n">event_rules</span><span class="o">=</span><span class="n">event_rules</span><span class="p">,</span>
+            <span class="n">vol_rules</span><span class="o">=</span><span class="n">vol_rules</span><span class="p">,</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_window</span> <span class="o">=</span> <span class="n">slow</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sign</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_datetime_rule</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">(</span><span class="n">date_rules</span> <span class="ow">or</span> <span class="p">[])]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">events</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_event_rule</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">(</span><span class="n">event_rules</span> <span class="ow">or</span> <span class="p">[])]</span>
+
+    <span class="c1"># Creates a buy signal if fast MA of closing price crosses over slow one and buy signal if vice versa</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">on_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ts</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">history</span><span class="p">):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_indicators</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_window</span><span class="p">:])</span>
+        <span class="n">signal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_signals</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">signal</span><span class="o">.</span><span class="n">enter_long</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">signal</span><span class="o">.</span><span class="n">enter_short</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+        <span class="c1"># Check if current bar is embargoed by datetime or event restrictions</span>
+        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">hit</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">events</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">hit</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dates</span><span class="p">):</span>
+            <span class="n">vol_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;entry_vol&#39;</span><span class="p">:</span> <span class="n">bar</span><span class="p">[</span><span class="s1">&#39;Volume&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s1">&#39;trade_type&#39;</span><span class="p">:</span> <span class="nb">type</span><span class="p">}</span>
+            <span class="n">vols</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_volume_rule</span><span class="p">(</span><span class="n">vol_args</span> <span class="o">|</span> <span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vol_rules</span> <span class="ow">or</span> <span class="p">[])]</span>
+
+            <span class="c1"># Check if current bar is embargoed by volume restrictions</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">hit</span><span class="p">(</span><span class="n">vol</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vols</span> <span class="k">for</span> <span class="n">vol</span> <span class="ow">in</span> <span class="n">bar</span><span class="p">[</span><span class="s1">&#39;Volume&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_trade</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">signals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+        <span class="n">full_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_indicators</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        <span class="n">sigs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_signals</span><span class="p">(</span><span class="n">full_df</span><span class="p">)</span>
+
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">sigs</span><span class="p">[</span><span class="s1">&#39;enter_long&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">|</span> <span class="n">sigs</span><span class="p">[</span><span class="s1">&#39;enter_short&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">entries</span> <span class="o">=</span> <span class="n">full_df</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">entries</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">entries</span><span class="p">[</span><span class="s1">&#39;enter_long&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">ts</span><span class="p">,</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">entries</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="c1"># Check if current bar is embargoed by datetime or event restrictions</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">hit</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">events</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">hit</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dates</span><span class="p">):</span>
+                <span class="n">vol_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;entry_vol&#39;</span><span class="p">:</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;Volume&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s1">&#39;trade_type&#39;</span><span class="p">:</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]}</span>
+                <span class="n">vols</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_volume_rule</span><span class="p">(</span><span class="n">vol_args</span> <span class="o">|</span> <span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vol_rules</span> <span class="ow">or</span> <span class="p">[])]</span>
+
+                <span class="c1"># Check if current bar is embargoed by volume restrictions</span>
+                <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">hit</span><span class="p">(</span><span class="n">vol</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vols</span> <span class="k">for</span> <span class="n">vol</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;Volume&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_build_trade</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]))</span>
+
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span> <span class="k">if</span> <span class="n">rows</span> <span class="k">else</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_indicators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;slow_ma&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">slow</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;fast_ma&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fast</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">df</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_create_signals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;fast_ma&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;slow_ma&#39;</span><span class="p">]</span>
+
+        <span class="n">sign</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sign</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sign_prev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sign</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;enter_long&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sign_prev&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;enter_short&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sign_prev&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;enter_long&#39;</span><span class="p">,</span> <span class="s1">&#39;enter_short&#39;</span><span class="p">]]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_trade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ts</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;symbols&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbols</span><span class="p">,</span>
+            <span class="s1">&#39;trade_type&#39;</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span>
+            <span class="s1">&#39;capital&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">capital</span><span class="p">,</span>
+            <span class="s1">&#39;entry_ts&#39;</span><span class="p">:</span> <span class="n">ts</span><span class="p">,</span>
+            <span class="s1">&#39;timeout&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">row</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">])</span>
+
+
+<span class="n">add_strategy</span><span class="p">(</span><span class="s1">&#39;my_strategies.ma_crossover&#39;</span><span class="p">,</span> <span class="n">MACrossover</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="profit-exit">
+<h3>Profit Exit<a class="headerlink" href="#profit-exit" title="Link to this heading">¶</a></h3>
+<p>The base class for implementing take-profit exits from a trade is the <a class="reference external" href="tradekit.exec_rules.profit.html">ProfitRule</a> class.
+It is imported via</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.exec_rules.profit.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProfitRule</span>
+</pre></div>
+</div>
+<p>For custom take-profit exits, the user must code it as a subclass thereof. In particular, they need to provide the following methods:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProfitRule.hit(bar)</span></code></p>
+<blockquote>
+<div><p>This method checks for every <code class="docutils literal notranslate"><span class="pre">bar</span></code> whether the take-profit price level was hit or not and returns the corresponding boolean value.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProfitRule.update(bar)</span></code></p>
+<blockquote>
+<div><p>This method is used for updating the take-profit price level according to the current (and historic) asset price. It enables a dynamic exit price.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProfitRule.exit_mask(df)</span></code></p>
+<blockquote>
+<div><p>This method is used to determine take-profit exits in a vectorised way for backtesting. Given historical data <code class="docutils literal notranslate"><span class="pre">df</span></code>, it determines all bars that would have triggered an exit.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>A custom <code class="docutils literal notranslate"><span class="pre">ProfitRule</span></code> class, named <code class="docutils literal notranslate"><span class="pre">TestProfit</span></code> and provided in ‘test/class/location/test_profit.py’, is added to the registry by appending the command</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_profit</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">test_profit</span><span class="p">,</span> <span class="n">TestProfit</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>to the test_profit.py file.</p>
+<p>A sample implementation for a static price level is provided in <a class="reference external" href="../../../templates/my_profit_rules/static.py">static.py</a>.</p>
+</section>
+<section id="stop-exit">
+<h3>Stop Exit<a class="headerlink" href="#stop-exit" title="Link to this heading">¶</a></h3>
+<p>The base class for implementing stop-loss exits from a trade is the <a class="reference external" href="tradekit.exec_rules.stop.html">StopRule</a> class. It is imported via</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.exec_rules.stop.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">StopRule</span>
+</pre></div>
+</div>
+<p>It is built analogously to the <code class="docutils literal notranslate"><span class="pre">ProfitRule</span></code> class above—simply replace ‘Profit’ by ‘Stop’ everywhere.</p>
+<p>Here is a sample implementation <a class="reference external" href="../../../templates/my_stop_rules/dynamic.py">dynamic.py</a> for a dynamic price level:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.exec_rules.stop.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">StopRule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.exec_rules.stop.factory</span><span class="w"> </span><span class="kn">import</span> <span class="n">add_stop</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">npt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">DynamicStop</span><span class="p">(</span><span class="n">StopRule</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry_price</span><span class="p">,</span> <span class="n">trade_type</span><span class="p">,</span> <span class="n">bps</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">window</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">entry_price</span><span class="p">,</span> <span class="n">trade_type</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">bps</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_level</span> <span class="o">=</span> <span class="n">entry_price</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">trade_type</span> <span class="o">*</span> <span class="n">bps</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+
+    <span class="c1"># This method is useful for checkpointing</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;entry_price&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">entry_price</span><span class="p">,</span>
+                <span class="s1">&#39;trade_type&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">trade_type</span><span class="p">,</span>
+                <span class="s1">&#39;bps&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">bps</span><span class="p">,</span>
+                <span class="s1">&#39;window&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="p">,</span>
+                <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="p">,</span>
+                <span class="s1">&#39;buffer&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">}</span>
+
+    <span class="c1"># Returns True if current low is below exit level (long) or current high is above exit level (short)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">hit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bar</span><span class="p">):</span>
+        <span class="n">cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">trade_type</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">&gt;=</span> <span class="n">bar</span><span class="p">[</span><span class="s1">&#39;Low&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">&lt;=</span> <span class="n">bar</span><span class="p">[</span><span class="s1">&#39;High&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cond</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+    <span class="c1"># Adjusts the exit level dynamically after an interval of len(self.buffer)-many bars by replacing the entry level with the maximum price reached during that interval</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bar</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bar</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trade_type</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">new_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_level</span> <span class="o">=</span> <span class="n">new_price</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">trade_type</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">bps</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+    <span class="c1"># Creates a boolean array with entries True if price crosses below exit level and False otherwise (for long positions; vice versa for shorts)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">exit_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span>
+        <span class="nb">type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trade_type</span>
+        <span class="n">bps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bps</span>
+        <span class="n">entry_price</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entry_price</span>
+
+        <span class="n">masks</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">type</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">price</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Low&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+                <span class="n">blocks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">stride_tricks</span><span class="o">.</span><span class="n">sliding_window_view</span><span class="p">(</span><span class="n">price</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">n</span><span class="p">)[::</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+                <span class="n">extremes</span> <span class="o">=</span> <span class="p">[</span><span class="n">entry_price</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[</span><span class="n">b</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">blocks</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">price</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;High&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+                <span class="n">blocks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">stride_tricks</span><span class="o">.</span><span class="n">sliding_window_view</span><span class="p">(</span><span class="n">price</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">n</span><span class="p">)[::</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+                <span class="n">extremes</span> <span class="o">=</span> <span class="p">[</span><span class="n">entry_price</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[</span><span class="n">b</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">blocks</span><span class="p">]</span>
+
+            <span class="n">rolling_extreme</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">extremes</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)[:</span><span class="nb">len</span><span class="p">(</span><span class="n">price</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])]</span>
+            <span class="n">stop_price</span> <span class="o">=</span> <span class="n">rolling_extreme</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="nb">type</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">bps</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">)</span>
+
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">price</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">stop_price</span>
+            <span class="n">masks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">masks</span><span class="p">)</span>
+
+
+<span class="n">add_stop</span><span class="p">(</span><span class="s1">&#39;my_stop_rules.dynamic&#39;</span><span class="p">,</span> <span class="n">DynamicStop</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="datetime-restrictions">
+<h3>Datetime Restrictions<a class="headerlink" href="#datetime-restrictions" title="Link to this heading">¶</a></h3>
+<p>The base class for implementing restrictions on the days and times the engine is allowed to trade is the <a class="reference external" href="tradekit.exec_rules.date_rules.html">DatetimeRule</a> class. It is imported via</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.exec_rules.date_rules.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">DatetimeRule</span>
+</pre></div>
+</div>
+<p>For custom datetime restrictions, the user must code them as a subclass thereof. In particular, they need to provide the following methods:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">DatetimeRule.hit(ts)</span></code></p>
+<blockquote>
+<div><p>This method checks for every time stamp <code class="docutils literal notranslate"><span class="pre">ts</span></code> whether it is embargoed according to the datetime rule or not. If it is, the return value is <code class="docutils literal notranslate"><span class="pre">False</span></code>, otherwise it is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DatetimeRule.update(bar)</span></code></p>
+<blockquote>
+<div><p>This method is used for updating the datetime rule over time.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DatetimeRule.exit_mask(df)</span></code></p>
+<blockquote>
+<div><p>This method is a vectorised counterpart of <code class="docutils literal notranslate"><span class="pre">hit(ts)</span></code> used for backtesting. Given historical data <code class="docutils literal notranslate"><span class="pre">df</span></code>, it determines all bars that would be embargoed by the datetime rule.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>A custom <code class="docutils literal notranslate"><span class="pre">DatetimeRule</span></code> class, named <code class="docutils literal notranslate"><span class="pre">TestDate</span></code> and provided in ‘test/class/location/test_date.py’, is added to the registry by appending the command</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_datetime_rule</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">test_date</span><span class="p">,</span> <span class="n">TestDate</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>to the test_date.py file.</p>
+<p>A sample implementation for banning certain days from trading is provided in <a class="reference external" href="../../../templates/my_date_rules/day.py">day.py</a>.</p>
+</section>
+<section id="event-restrictions">
+<h3>Event Restrictions<a class="headerlink" href="#event-restrictions" title="Link to this heading">¶</a></h3>
+<p>The base class for implementing restrictions on the days the engine is allowed to trade due macro-economic events is the <a class="reference external" href="tradekit.exec_rules.event_rules.html">EventRule</a> class. It is imported via</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.exec_rules.event_rules.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">EventRule</span>
+</pre></div>
+</div>
+<p>It is built analogously to the <code class="docutils literal notranslate"><span class="pre">DatetimeRule</span></code> class above—simply replace ‘Datetime’ by ‘Event’ everywhere.</p>
+<p>A sample implementation for banning days when earnings reports are released from trading is provided in <a class="reference external" href="../../../templates/my_event_rules/earnings.py">earnings.py</a>.</p>
+</section>
+<section id="volume-restrictions">
+<h3>Volume Restrictions<a class="headerlink" href="#volume-restrictions" title="Link to this heading">¶</a></h3>
+<p>The base class for implementing trading restrictions on the engine based on traded volumes is the <a class="reference external" href="tradekit.exec_rules.volume_rules.html">VolumeRule</a> class. It is imported via</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tradekit.exec_rules.volume_rules.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">VolumeRule</span>
+</pre></div>
+</div>
+<p>It is built analogously to the <code class="docutils literal notranslate"><span class="pre">DatetimeRule</span></code> class above—simply replace ‘Datetime’ by ‘Volume’ everywhere.</p>
+<p>A sample implementation for banning the engine from trading when volumes are outside a given interval is provided in <a class="reference external" href="../../../templates/my_volume_rules/interval.py">interval.py</a>.</p>
+</section>
+</section>
+<section id="step-2-configuring-the-engine">
+<h2>Step 2: Configuring the Engine<a class="headerlink" href="#step-2-configuring-the-engine" title="Link to this heading">¶</a></h2>
+<p>Say, we want to test our strategy in live trading. For this purpose choose the <code class="docutils literal notranslate"><span class="pre">ForwardEngine</span></code>. In order to instantiate it, the user needs to provide the following init parameters:</p>
+<ul class="simple">
+<li><p>a name for the <code class="docutils literal notranslate"><span class="pre">ForwardEngine</span></code> instance; relevant when multiple engines are used concurrently</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> class to be used for signal emission</p></li>
+<li><p>a (list of) <code class="docutils literal notranslate"><span class="pre">Notifier</span></code> class (see Step 3) to be used for notifying about closed trades</p></li>
+</ul>
+<p>Once a object <code class="docutils literal notranslate"><span class="pre">test_engine</span></code> has been instantiated, the engine can be run by calling <code class="docutils literal notranslate"><span class="pre">test_engine.run(args)</span></code> with the following set of arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">poll_interval</span></code> specifying the time interval between consecutive polls for price data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">check_every</span></code> specifying the frequency of setting checkpoints (in units of polling intervals)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">runtime</span></code> limits the total runime of the engine</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">checkpoint_path</span></code> specifying the path to store the checkpoint file at</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log_path</span></code> specifying the path to store the log file at</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">eval_path</span></code> specifying the path to store the jsonl file listing closed trades at</p></li>
+</ul>
+<p>A sample engine is given below (the content of ‘ma_engine.py’ in the file tree above), using the MA strategy from above on Apple stock. First, we instantiate the <code class="docutils literal notranslate"><span class="pre">MACrossover</span></code> class, choosing 20 bars for fast MA and 60 bars for slow MA. For take-profit and stop-loss exits we choose a static price level 350 bps above, resp. 50 bps below entry price.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tradekit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+
+<span class="c1"># Instantiate the MACrossover class for Apple stock with chosen fast and slow MA</span>
+<span class="n">ma_strategy</span> <span class="o">=</span> <span class="n">MACrossover</span><span class="p">(</span>
+    <span class="n">symbols</span> <span class="o">=</span> <span class="s1">&#39;AAPL&#39;</span><span class="p">,</span>
+    <span class="n">capital</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="s1">&#39;1m&#39;</span><span class="p">,</span>
+    <span class="n">stop_rule</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my_stop_rules.static&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bps&quot;</span><span class="p">:</span> <span class="mi">50</span>
+    <span class="p">},</span>
+    <span class="n">profit_rule</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my_profit_rules.static&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bps&quot;</span><span class="p">:</span> <span class="mi">350</span>
+    <span class="p">},</span>
+    <span class="n">event_rules</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my_event_rules.earnings&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;symbols&quot;</span><span class="p">:</span> <span class="s2">&quot;AAPL&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">timeout</span> <span class="o">=</span> <span class="s1">&#39;5d&#39;</span><span class="p">,</span>
+    <span class="n">fast</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">slow</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="p">)</span>
+
+<span class="c1"># Instantiate the ForwardEngine class for the given strategy</span>
+<span class="n">ma_engine</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">ForwardEngine</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;MA_AAPL&#39;</span><span class="p">,</span>
+    <span class="n">strategy</span> <span class="o">=</span> <span class="n">ma_strategy</span>
+<span class="p">)</span>
+
+<span class="c1"># Run the engine with a poll interval of 60sec, setting checkpoints every 20 polls, with runtime of 90 days</span>
+<span class="n">ma_engine</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">poll_interval</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span>
+    <span class="n">check_every</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">runtime</span> <span class="o">=</span> <span class="s1">&#39;90d&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>After an engine finished running, the closed trades are saved to a jsonl file named ‘{engine_name}_trades.jsonl’, which is stored in the same directory as the engine config file. For the example above, the file is ‘MA_AAPL_trades.jsonl’. This file lists basic info about each trade and is used to evaluate the strategy, e.g. by using the <a class="reference external" href="tradekit.metrics.html">TradeBlotter</a> class.</p>
+</section>
+<section id="step-3-using-a-supervisor">
+<h2>Step 3: Using a Supervisor<a class="headerlink" href="#step-3-using-a-supervisor" title="Link to this heading">¶</a></h2>
+<p>If a strategy is to be tested over a long period of time, it is often not feasible to run the engine locally. Instead, it should be run on an external server. To facilitate this, the package includes the <a class="reference external" href="tradekit.suervisor.html">Supervisor</a> class. It can orchestrate multiple engines, handle engine crashes savely, and notify the user once engines have finished running.</p>
+<p>When using engines with a supervisor, the engine class is not instantiated manually. Instead, the user creates a json config file for the engine object to be run. A sample config file (named ‘ma_config.json’ in the file tree above) for backtesting the <code class="docutils literal notranslate"><span class="pre">MACrossover</span></code> strategy from above on a <code class="docutils literal notranslate"><span class="pre">BacktestEngine</span></code> remotely is pasted below:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MA_AAPL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;strategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_strategies.ma_crossover&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;symbols&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1h&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;fast&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;slow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;capital&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;stop_rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_stop_rules.static&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;bps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;profit_rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_profit_rules.static&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;bps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">350</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;date_rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_date_rules.day&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;days_to_exclude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_date_rules.time_interval&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;intervals&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;12:00:00&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;15:30:00&quot;</span><span class="p">]]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;event_rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_event_rules.earnings&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;symbols&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAPL&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;vol_rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_volume_rules.interval&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;intervals&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">60592490863</span><span class="p">]]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5d&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;poll_interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;check_every&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;runtime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5m&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;check_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./checkpoint.pkl&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;log_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./engine.log&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;eval_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;fees&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_fees.broker_a&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;bps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;flat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;period&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9mo&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In order to instantiate a <code class="docutils literal notranslate"><span class="pre">Supervisor</span></code> object, the user needs to provide the following init parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">backtesting</span></code> specifies whether the supervised engines are for backtesting or live trading</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> specifies the name of the supervisor; relevant when multiple supervisors are being used</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">engine_cfgs</span></code> is a dictionary containing the names of all engines as keys and the paths to their configuration files</dt><dd><p>as values</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notifiers</span></code> specifies a list of notifiers used to inform the user about crashes, finished runs etc.</p></li>
+</ul>
+<p>Say, we save the config file above as <code class="docutils literal notranslate"><span class="pre">ma_aapl.json</span></code> in the project folder. Then the engine can be run via a supervisor with the following code (the content of ‘ma_supervisor.py’ in the file tree above):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tradekit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+
+<span class="c1"># Instantiate an email notifier to be used by the supervisor</span>
+<span class="n">email_notifier</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">EmailNotifier</span><span class="p">(</span>
+    <span class="n">smtp_host</span><span class="o">=</span><span class="s1">&#39;mail.gmail.com&#39;</span><span class="p">,</span>
+    <span class="n">smtp_port</span><span class="o">=</span><span class="mi">465</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s1">&#39;john.doe@gmail.com&#39;</span><span class="p">,</span>
+    <span class="n">smtp_password</span><span class="o">=</span><span class="s2">&quot;SMTP_PASSWORD&quot;</span><span class="p">,</span>
+    <span class="n">sender</span><span class="o">=</span><span class="s1">&#39;john.doe@gmail.com&#39;</span><span class="p">,</span>
+    <span class="n">recipients</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;jane.doe@icloud.com&#39;</span><span class="p">,</span> <span class="s1">&#39;lisa.simpson@gmail.com&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Instantiate the supervisor, using the BacktestEngine cfg and email_notifier</span>
+<span class="n">ma_supervisor</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Supervisor</span><span class="p">(</span>
+    <span class="n">backtesting</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;MA_AAPL_supervisor&quot;</span><span class="p">,</span>
+    <span class="n">engine_cfgs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;MA_AAPL&quot;</span><span class="p">:</span> <span class="s2">&quot;ma_aapl.json&quot;</span>
+    <span class="p">},</span>
+    <span class="n">notifiers</span> <span class="o">=</span> <span class="p">[</span><span class="n">email_notifier</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Run the supervisor</span>
+<span class="n">ma_supervisor</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In the code above we have instantiated an <a class="reference external" href="tradekit.notifiers.html">EmailNotifier</a> class, which sends an email to the specified recipients, e.g., once an engine finished running.</p>
+<p>NB: Currently, this is the only way to get notified. Future versions will include additional types of notification (text messages, signal, slack etc.).</p>
+</section>
+<section id="step-4-evaluation">
+<h2>Step 4: Evaluation<a class="headerlink" href="#step-4-evaluation" title="Link to this heading">¶</a></h2>
+<p>When a supervisor is used to run the engines and a <code class="docutils literal notranslate"><span class="pre">Notifier</span></code> is configured, the notification about a finished run will always include a dashboard of relevant trade metrics as a summary. All plots that are part of the dashboard can be created individually as well, see <a class="reference external" href="tradekit.visuals.html">visuals</a>. A sample dashboard for the MA strategy (with very poorly chosen parameters) looks like this:</p>
+<iframe src="_static/dashboard.pdf"
+        width="100%"
+        height="500px"
+        style="border: none;">
+</iframe>
+
+A registry for adding/using custom metrics and plots will be added in a future version.</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="templates.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Templates</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Roman Mauch
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">User Guide</a><ul>
+<li><a class="reference internal" href="#step-1-creating-strategies">Step 1: Creating Strategies</a><ul>
+<li><a class="reference internal" href="#strategy">Strategy</a></li>
+<li><a class="reference internal" href="#profit-exit">Profit Exit</a></li>
+<li><a class="reference internal" href="#stop-exit">Stop Exit</a></li>
+<li><a class="reference internal" href="#datetime-restrictions">Datetime Restrictions</a></li>
+<li><a class="reference internal" href="#event-restrictions">Event Restrictions</a></li>
+<li><a class="reference internal" href="#volume-restrictions">Volume Restrictions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#step-2-configuring-the-engine">Step 2: Configuring the Engine</a></li>
+<li><a class="reference internal" href="#step-3-using-a-supervisor">Step 3: Using a Supervisor</a></li>
+<li><a class="reference internal" href="#step-4-evaluation">Step 4: Evaluation</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>
