@@ -1,6 +1,0 @@
-numpy
-pandas
-pandas_market_calendars
-yfinance
-seaborn
-matplotlib
