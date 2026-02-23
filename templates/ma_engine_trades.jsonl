@@ -1,0 +1,17 @@
+{"signal_id":1,"symbols":["AAPL"],"type":[-1],"capital":[1000],"entry_time":1749666600000,"exit_time":1750098600000,"entry_price":[198.9799957275],"exit_price":198.2449951172,"exit_reason":"timeout"}
+{"signal_id":2,"symbols":["AAPL"],"type":[1],"capital":[1000],"entry_time":1750703400000,"exit_time":1750771800000,"entry_price":[201.3601989746],"exit_price":200.9822998047,"exit_reason":"stop"}
+{"signal_id":3,"symbols":["AAPL"],"type":[1],"capital":[1000],"entry_time":1752773400000,"exit_time":1753205400000,"entry_price":[211.2799987793],"exit_price":213.7100067139,"exit_reason":"timeout"}
+{"signal_id":4,"symbols":["AAPL"],"type":[-1],"capital":[1000],"entry_time":1755711000000,"exit_time":1756128600000,"entry_price":[225.9900970459],"exit_price":228.8099975586,"exit_reason":"stop"}
+{"signal_id":5,"symbols":["AAPL"],"type":[1],"capital":[1000],"entry_time":1756319400000,"exit_time":1756819800000,"entry_price":[230.1325073242],"exit_price":230.6000061035,"exit_reason":"stop"}
+{"signal_id":6,"symbols":["AAPL"],"type":[-1],"capital":[1000],"entry_time":1757525400000,"exit_time":1757597400000,"entry_price":[227.0599975586],"exit_price":228.9400024414,"exit_reason":"stop"}
+{"signal_id":7,"symbols":["AAPL"],"type":[1],"capital":[1000],"entry_time":1758040200000,"exit_time":1758202200000,"entry_price":[239.0856018066],"exit_price":237.5599975586,"exit_reason":"stop"}
+{"signal_id":8,"symbols":["AAPL"],"type":[-1],"capital":[1000],"entry_time":1760038200000,"exit_time":1760448600000,"entry_price":[253.9799957275],"exit_price":247.0200042725,"exit_reason":"profit"}
+{"signal_id":9,"symbols":["AAPL"],"type":[1],"capital":[1000],"entry_time":1760977800000,"exit_time":1761139800000,"entry_price":[263.1650085449],"exit_price":260.0498962402,"exit_reason":"stop"}
+{"signal_id":10,"symbols":["AAPL"],"type":[-1],"capital":[1000],"entry_time":1762806600000,"exit_time":1762871400000,"entry_price":[269.3599853516],"exit_price":274.1000061035,"exit_reason":"stop"}
+{"signal_id":11,"symbols":["AAPL"],"type":[1],"capital":[1000],"entry_time":1762882200000,"exit_time":1762957800000,"entry_price":[274.4800109863],"exit_price":272.9400024414,"exit_reason":"stop"}
+{"signal_id":12,"symbols":["AAPL"],"type":[1],"capital":[1000],"entry_time":1764009000000,"exit_time":1764599400000,"entry_price":[276.2195129395],"exit_price":278.1420898438,"exit_reason":"timeout"}
+{"signal_id":13,"symbols":["AAPL"],"type":[-1],"capital":[1000],"entry_time":1765211400000,"exit_time":1765290600000,"entry_price":[277.2300109863],"exit_price":277.700012207,"exit_reason":"stop"}
+{"signal_id":14,"symbols":["AAPL"],"type":[1],"capital":[1000],"entry_time":1766781000000,"exit_time":1767195000000,"entry_price":[273.25],"exit_price":272.4899902344,"exit_reason":"stop"}
+{"signal_id":15,"symbols":["AAPL"],"type":[-1],"capital":[1000],"entry_time":1767375000000,"exit_time":1767807000000,"entry_price":[270.0799865723],"exit_price":261.2200012207,"exit_reason":"timeout"}
+{"signal_id":16,"symbols":["AAPL"],"type":[1],"capital":[1000],"entry_time":1769538600000,"exit_time":1769610600000,"entry_price":[259.875],"exit_price":256.0899963379,"exit_reason":"stop"}
+{"signal_id":17,"symbols":["AAPL"],"type":[-1],"capital":[1000],"entry_time":1770921000000,"exit_time":1771353000000,"entry_price":[261.7799987793],"exit_price":265.2850036621,"exit_reason":"timeout"}

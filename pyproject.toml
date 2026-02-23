@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tradekit"
+version = "0.1.0"
+license = "MIT"
+description = "A modular, light weight engine for live trading and backtesting"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "rjm263" }]
+dependencies = [
+    "numpy",
+    "pandas",
+    "pandas_market_calendars",
+    "yfinance",
+    "seaborn",
+    "matplotlib"
+]
+
+[project.urls]
+Homepage = "https://github.com/rjm263/tradekit"
+Documentation = "https://github.com/rjm263/tradekit"
+Source = "https://github.com/rjm263/tradekit"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

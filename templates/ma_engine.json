@@ -1,0 +1,65 @@
+{
+    "name": "ma_engine",
+    "notifiers": [
+        {
+            "name": "email",
+            "smtp_host": "mail.gmx.net",
+            "smtp_port": 465,
+            "user": "roman.mauch@gmx.de",
+            "smtp_password": "SMTP_PASSWORD",
+            "sender": "roman.mauch@gmx.de",
+            "recipients": "roman.mauch@icloud.com"
+        }
+    ],
+    "strategy": {
+        "name": "my_strategies.ma_crossover", 
+        "symbols": "AAPL", 
+        "interval": "1h", 
+        "fast": 20, 
+        "slow": 60, 
+        "capital": 1000,
+        "stop_rule": {
+            "name": "my_stop_rules.static", 
+            "bps": 50
+        },
+        "profit_rule": {
+            "name": "my_profit_rules.static", 
+            "bps": 350
+        },
+        "date_rules": [
+            {
+                "name": "my_date_rules.day", 
+                "days_to_exclude": [4]
+            },
+            {
+                "name": "my_date_rules.time_interval", 
+                "intervals": [["12:00:00", "15:30:00"]]
+            }
+        ],
+        "event_rules": [
+            {
+                "name": "my_event_rules.earnings", 
+                "symbols": "AAPL"
+            }
+        ],
+        "vol_rules": [
+            {
+                "name": "my_volume_rules.interval", 
+                "intervals": [[1, 60592490863]]
+            }
+        ],
+        "timeout": "5d"
+    },
+    "poll_interval": 60,
+    "check_every": 10,
+    "runtime": "5m",
+    "check_path": "./checkpoint.pkl",
+    "log_path": "./engine.log",
+    "eval_path": "./",
+    "fees": {
+        "name": "my_fees.broker_a", 
+        "bps": 25, 
+        "flat": 5
+    },
+    "period": "9mo"
+}
